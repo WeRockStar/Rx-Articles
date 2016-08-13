@@ -50,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
                 .subscribe(n -> Log.d("Number Odd", n + ""));
     }
 
+    private void sample04() {
+
+        Observable.just(1, 2, 3, 4, 5, 6, 7, 8)
+                .filter(n -> n % 2 == 0)
+                .take(2)
+                .subscribe(n -> Log.d("Number Odd", n + ""));
+    }
+
     private String showHelloWorld() {
         return "Hello world";
     }
