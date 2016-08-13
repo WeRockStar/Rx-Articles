@@ -10,17 +10,50 @@ import rx.Subscription;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Subscription subscription;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sample01();
     }
 
     private void sample01() {
-        Observable<Integer> sample = Observable.create(subscriber -> {
-            subscriber.onNext(10);
+
+        Observable<String> sampleString = Observable.create(new Observable.OnSubscribe<String>() {
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                subscriber.onNext("Reactive Programming");
+                subscriber.onError(new NullPointerException());
+                subscriber.onCompleted();
+            }
         });
 
-        Subscription subscription = sample.subscribe(n -> Log.d("Number", "" + n));
+        subscription = sampleString.subscribe(new Subscriber<String>() {
+            @Override
+            public void onCompleted() {
+                Log.d("Completed", "No more data");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.e("Error", e.getMessage());
+            }
+
+            @Override
+            public void onNext(String data) {
+                Log.d("Retrieve", data);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        subscription.unsubscribe();
     }
 }
