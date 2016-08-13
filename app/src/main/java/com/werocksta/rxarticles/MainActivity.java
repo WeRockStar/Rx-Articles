@@ -43,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
                         () -> Log.d("Completed", "No more data"));
     }
 
+    private void sample03() {
+
+        Observable.just(1, 2, 3, 4, 5, 6, 7, 8)
+                .filter(n -> n % 2 == 0)
+                .subscribe(n -> Log.d("Number Odd", n + ""));
+    }
+
     private String showHelloWorld() {
         return "Hello world";
     }
