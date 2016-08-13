@@ -22,13 +22,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void sample01() {
 
-        Observable.create(subscriber ->
+        Observable<String> sampleString = Observable.create(subscriber ->
                 subscriber.onNext("Reactive Programming")
-        ).subscribe(
-                data -> Log.d("Retrieve", (String) data),
-                throwable -> Log.e("Error", throwable.getMessage()),
-                () -> Log.d("Completed", "No more data")
         );
+
+        sampleString.map(data -> data.toLowerCase())
+                .subscribe(data -> Log.d("Retrieve", data));
+
+        sampleString.map(data -> data.toUpperCase())
+                .subscribe(data -> Log.d("Retrieve", data));
     }
 
     @Override
