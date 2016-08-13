@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sample01();
+        sample02();
     }
 
     private void sample01() {
@@ -31,12 +32,25 @@ public class MainActivity extends AppCompatActivity {
 
         sampleString.map(data -> data.toUpperCase())
                 .subscribe(data -> Log.d("Retrieve", data));
+
+    }
+
+    private void sample02() {
+        Observable.just(showHelloWorld())
+                .subscribe(
+                        message -> Log.d("Message", message),
+                        throwable -> Log.d("Error", throwable.getMessage()),
+                        () -> Log.d("Completed", "No more data"));
+    }
+
+    private String showHelloWorld() {
+        return "Hello world";
     }
 
     @Override
     protected void onStop() {
         super.onStop();
 
-        subscription.unsubscribe();
+        // subscription.unsubscribe();
     }
 }
