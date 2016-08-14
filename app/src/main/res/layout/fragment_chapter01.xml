@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="com.werocksta.rxarticles.chapter01.Chapter01Fragment">
+    tools:context="com.werocksta.rxarticles.chapter.Chapter01Fragment">
 
 
 </LinearLayout>

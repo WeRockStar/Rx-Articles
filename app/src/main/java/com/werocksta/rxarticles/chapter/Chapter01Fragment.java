@@ -1,4 +1,4 @@
-package com.werocksta.rxarticles.chapter01;
+package com.werocksta.rxarticles.chapter;
 
 
 import android.os.Bundle;

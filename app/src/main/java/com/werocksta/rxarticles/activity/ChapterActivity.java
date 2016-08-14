@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.werocksta.rxarticles.R;
-import com.werocksta.rxarticles.chapter01.Chapter01Fragment;
-import com.werocksta.rxarticles.chapter01.Chapter02Fragment;
+import com.werocksta.rxarticles.chapter.Chapter01Fragment;
+import com.werocksta.rxarticles.chapter.Chapter02Fragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
