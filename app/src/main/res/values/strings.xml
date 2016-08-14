@@ -3,4 +3,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="chapter01">chapter 01</string>
+    <string name="chapter03">chapter 03</string>
+    <string name="chapter02">chapter 02</string>
 </resources>

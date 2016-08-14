@@ -18,7 +18,8 @@ public class Chapter02Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_chapter02, container, false);
+        View view = inflater.inflate(R.layout.fragment_chapter02, container, false);
+        return view;
     }
 
 }
