@@ -1,8 +1,10 @@
-package com.werocksta.rxarticles;
+package com.werocksta.rxarticles.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.werocksta.rxarticles.R;
 
 import rx.Observable;
 import rx.Subscriber;
