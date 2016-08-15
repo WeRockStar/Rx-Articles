@@ -1,4 +1,4 @@
 #### Rx libs
 ```groovy
-compile 'io.reactivex:rxjava:1.1.8'
+compile 'io.reactivex:rxjava:1.1.9'
 ```
